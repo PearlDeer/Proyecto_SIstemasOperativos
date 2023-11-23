@@ -1,14 +1,18 @@
 #ifndef MEMORIA_H
 #define MEMORIA_H
 #include<iostream>
+
+using namespace std; 
+
 class Memoria{
-	private:
+	public:
 		int size;
+		int idProceso;
 		bool libre;
 		Memoria *next;
-	public:
-	Memoria(int size){
+	Memoria(int size, int idProceso){
 		this->size=size;
+		this->idProceso=idProceso;
 		this->libre=true;
 		this->next=NULL;
 	}
@@ -18,8 +22,14 @@ class Memoria{
 	int getSize(){
 		return this->size;
 	}
-};
+	void setIdProceso(int idProceso){
+		this->idProceso=idProceso;
+	}
+	int getIdProceso(){
+		return this->idProceso;
+	}
 
+};
 
 
 #endif
